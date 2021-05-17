@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+	<div class="uk-width-1-1">
+		<div class="uk-container">
+			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+				<div class="uk-width-1-1@m">
+					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+						<h3 class="uk-card-title uk-text-center">Welcome Aggressive Manager</h3>
+						<form  method="post">
+        						{% csrf_token %}
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: user"></span>
+									<input class="uk-input uk-form-large" type="text" value="{{ form.username }}">
+								</div>
+							</div>
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: lock"></span>
+									<input class="uk-input uk-form-large" type="password" value="{{ form.password }}">
+								</div>
+							</div>
+							<div class="uk-margin">
+								<button type="submit" class="uk-button uk-button-primary uk-button-large uk-width-1-1" value="OK">Login</button>
+							</div>
+							<div class="uk-text-small uk-text-center">
+								Not registered? <a href="#">Create an account</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

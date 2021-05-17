@@ -5,25 +5,59 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- UIkit CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/css/uikit.min.css" />
 
-<!-- UIkit JS -->
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.21/dist/js/uikit-icons.min.js"></script>
 
 
     </head>
     <body>
-   <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-    <h3 class="uk-card-title">Default</h3>
-    <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
-     <div>
-        <div class="uk-card uk-card-secondary uk-card-body">
-            <h3 class="uk-card-title">Secondary</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li>
+                <a href="#">Parent</a>
+<!--                <div class="uk-navbar-dropdown">-->
+<!--                    <ul class="uk-nav uk-navbar-dropdown-nav">-->
+<!--                        <li class="uk-active"><a href="#">Active</a></li>-->
+<!--                        <li><a href="#">Item</a></li>-->
+<!--                        <li><a href="#">Item</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+            </li>
+            <li><a href="#">Item</a></li>
+        </ul>
+
+    </div>
+</nav>
+<div class="uk-child-width-1-2 uk-text-center" uk-grid>
+
+    <div>
+        <div class="uk-child-width-1-5 uk-text-center" uk-grid>
+            <div>
+                <div class="uk-card uk-card-primary uk-card-body">
+                    <div class="uk-width-1-2@s uk-width-2-5@m">
+                    <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active"><a href="#">Active</a></li>
+                    <li><a href="#">Item</a></li>
+                    <li><a href="#">Item</a></li>
+                </ul>
+            </div>
+                </div>
+            </div>
+
         </div>
     </div>
+     <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+</div>
+
+
 
 
     </body>
