@@ -17,7 +17,8 @@
 		<div class="uk-flex uk-flex-center">
 			<div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-large">
 				<h3>Register</h3>
-				<form class="uk-form-stacked" action="" method="post">
+				<form class="uk-form-stacked" method="post">
+					{% csrf_token %}
 					<div class="uk-margin">
 						<label class="uk-form-label" for="username">
 							Username
@@ -25,7 +26,7 @@
 						<div class="uk-form-controls">
 							<div class="uk-inline uk-width-1-1">
 								<a class="uk-form-icon uk-form-icon-flip" uk-tooltip="title: Alpha-numeric characters.<br>Minimum 3 characters.<br>Maximum 16 characters.<br>This field is required.; pos: bottom-right"><i class="fas fa-info-circle"></i></a>
-								<input class="uk-input" id="username" name="username" type="text">
+								<input class="uk-input" id="username" name="username" type="text" value="{{ username }}">
 							</div>
 						</div>
 					</div>
@@ -36,7 +37,7 @@
 						<div class="uk-form-controls">
 							<div class="uk-inline uk-width-1-1">
 								<a class="uk-form-icon uk-form-icon-flip" uk-tooltip="title: Must be a valid email.<br>One account per email.<br>This field is required.; pos: bottom-right"><i class="fas fa-info-circle"></i></a>
-								<input class="uk-input" id="email" name="email" type="text">
+								<input class="uk-input" id="email" name="email" type="text" value="{{ email }}">
 							</div>
 						</div>
 					</div>
@@ -47,7 +48,7 @@
 						<div class="uk-form-controls">
 							<div class="uk-inline uk-width-1-1">
 								<a class="uk-form-icon uk-form-icon-flip" uk-tooltip="title: Minimum 8 characters.<br>This field is required.; pos: bottom-right"><i class="fas fa-info-circle"></i></a>
-								<input class="uk-input" id="password" name="password" type="password">
+								<input class="uk-input" id="password" name="password" type="password" value="{{ password }}">
 							</div>
 						</div>
 					</div>
@@ -58,7 +59,7 @@
 						<div class="uk-form-controls">
 							<div class="uk-inline uk-width-1-1">
 								<a class="uk-form-icon uk-form-icon-flip" uk-tooltip="title: Must match the password field.<br>This field is required.; pos: bottom-right"><i class="fas fa-info-circle"></i></a>
-								<input class="uk-input" id="repeat_password" name="repeat_password" type="password">
+								<input class="uk-input" id="repeat_password" name="password2" type="password" value="{{ password }}">
 							</div>
 						</div>
 					</div>
@@ -75,3 +76,10 @@
 </section>
 </body>
 </html>
+<!-- <h1>Create an account</h1>-->
+<!--  <p>Please, sign up using the following form:</p>-->
+<!--  <form method="post">-->
+<!--    {{ user_form.as_p }}-->
+<!--    {% csrf_token %}-->
+<!--    <p><input type="submit" value="Create my account"></p>-->
+<!--  </form>-->
