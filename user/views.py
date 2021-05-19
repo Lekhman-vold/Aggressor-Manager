@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
@@ -5,8 +6,17 @@ from .forms import LoginForm, RegisterForm, UserRegistrationForm
 from .models import UserModel
 
 
+def get_dashboard(request):
+    return render(request, 'base.html')
+
+
 def user_profile(request):
     return render(request, 'base.html')
+
+
+def user_cards(request):
+    users = User.objects.all()
+    return render(request, 'users/user_list.html', {'users': users})
 
 
 def user_login(request):
