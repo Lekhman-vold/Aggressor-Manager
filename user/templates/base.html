@@ -62,7 +62,7 @@
 			<div class="uk-navbar-left">
 				<a class="uk-navbar-item uk-logo" href="">
           <img class="uk-margin-small-right " height="48" width="48" src="https://image.flaticon.com/icons/svg/186/186303.svg">
-					Dashboard
+					Aggressive manager
 				</a>
 			</div>
 			<div class="uk-navbar-right">
@@ -83,8 +83,8 @@
 						</a>
 					</li>
 					<li class="uk-visible@s">
-						<a href="">
-							Contact
+						<a href="{% url 'user:login' %}">
+							Exit
 						</a>
 					</li>
 				</ul>
@@ -142,11 +142,7 @@
 
 
 
-            {% block main %}
-
-
-
-
+            {% block content %}
             {% endblock  %}
 			</div>
 		</div>

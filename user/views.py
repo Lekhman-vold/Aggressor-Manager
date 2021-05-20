@@ -28,7 +28,8 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponse('Authenticated successfully')
+                    # return HttpResponse('Authenticated successfully')
+                    return redirect('/user/profile/')
                 else:
                     return HttpResponse('Disabled account')
             else:
@@ -36,25 +37,6 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'auth/login.html', {'form': form})
-
-
-# def user_register(request):
-#     if request.method == 'POST':
-#         form = RegisterForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             user.refresh_from_db()  # load the profile instance created by the signal
-#             user.profile.birth_date = form.cleaned_data.get('email')
-#             user.save()
-#             raw_password = form.cleaned_data.get('password1')
-#             user = authenticate(username=user.username, password=raw_password)
-#             login(request, user)
-#             return redirect('home')
-#     else:
-#         form = RegisterForm()
-#
-#     return render(request, 'auth/register.html', {'form': form})
-    # return render(request, 'auth/register.html')
 
 
 def user_register(request):
@@ -73,6 +55,4 @@ def user_register(request):
             return redirect('/profile/')
     else:
         user_form = UserRegistrationForm()
-    return render(request,
-                  'auth/register.html',
-                  {'form': user_form})
+    return render(request, 'auth/register.html', {'form': user_form})
