@@ -11,4 +11,4 @@ class Tasks(models.Model):
     end_date = models.DateTimeField(auto_now=False, blank=True)
 
     def __str__(self):
-        return f"Tasks {self.title}, status: {self.status} created user: {self.user}"
+        return f"Tasks {self.title}, status: {self.status} worked user: {self.user}"
