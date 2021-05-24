@@ -65,11 +65,14 @@ WSGI_APPLICATION = 'manager_agressor.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'deq8po84jqkhnq',
+        'HOST': 'ec2-3-218-71-191.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'ccqztdsylgxhtk',
+        'PASSWORD': '24f0d228a3e2073b5f0580fb88c4b825e77104029935bbeec2cf2b85efe7d377'
     }
 }
 
