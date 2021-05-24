@@ -1,4 +1,5 @@
 from pathlib import Path
+import dj_database_url
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +14,7 @@ SECRET_KEY = 'django-insecure-mulp*g=eavmf0f7u*gn)x!hc#7g@^48ucv#$qbpt99x6-=n*73
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -113,4 +114,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ROOT_URLCONF = 'manager_agressor.urls'
