@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'chat',
     'user',
     'tasks',
+    'todos',
 ]
 
 MIDDLEWARE = [
